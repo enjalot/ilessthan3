@@ -1,26 +1,14 @@
 //ascii artify. from: http://thecodeplayer.com/walkthrough/cool-ascii-animation-using-an-image-sprite-canvas-and-javascript
 
-/* stupid cross domain security policy
-
-*/
-
-
 var asciiScale = d3.scale.ordinal()
 .domain(['Q', '0', "o", "x" ,"."])
-//.range([0, 50, 75, 100, 121, 150, 175, 200, 225, 255])
-//.domain(['周', '能', '彦', '弟', '哥', '有', "不", "大", "又", "一" ,"。"].reverse())
-.range([0, 50, 121, 150, 175, 200, 225, 255])
-.domain(['周', '能', '彦', '弟', '哥', '有', "大", "一" ,"。"].reverse())
-
-//.range([0, 50, 127, 150, 175, 200, 230, 250, 255])
+.range([0, 50, 75, 100, 150, 200, 255])
+.domain(['周', '能', '彦', '弟', '哥', "一" ,"。"].reverse())
 
 var colorScale = d3.scale.linear()
 .interpolate(d3.interpolateHsl)
 .range(["#FF2727", "#03750C", "#00AD53"])
 
-//var img = document.getElementById("theimage");
-//var W = img.width;
-//var H = img.height;
 var W;
 var H;
 
@@ -98,8 +86,8 @@ function render(pixels) {
         return "left";
     },
     "color": function(d,i) {
-      //return "rgba(" + [d.r, d.g, d.b, d.a] + ")";
-      return colorScale(i);
+      return "rgba(" + [d.r, d.g, d.b, d.a] + ")";
+      //return colorScale(i);
     }
   })
 }
